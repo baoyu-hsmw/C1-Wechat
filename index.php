@@ -106,8 +106,8 @@ $server->setMessageHandler(function($message) use($app){
                             'sub_button' => [
                                 [
                                     'type' => 'view',
-                                    'name' => '掌圈首页',
-                                    'url' => 'http://longnan.jx1860.net'
+                                    'name' => '敬请欣赏',
+                                    'url' => 'http://nemo.jx1860.net/hello.php' //这里必须是完整的URL
                                 ],
                                 [
                                     'type' => 'click',
