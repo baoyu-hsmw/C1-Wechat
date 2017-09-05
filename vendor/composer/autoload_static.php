@@ -114,6 +114,13 @@ class ComposerStaticInitce567ea5dd4555512148d48dd4b8a0ba
                 0 => __DIR__ . '/..' . '/pimple/pimple/src',
             ),
         ),
+        'B' => 
+        array (
+            'BaconQrCode' => 
+            array (
+                0 => __DIR__ . '/..' . '/bacon/bacon-qr-code/src',
+            ),
+        ),
     );
 
     public static function getInitializer(ClassLoader $loader)
