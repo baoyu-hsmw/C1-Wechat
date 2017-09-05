@@ -19,15 +19,28 @@ $app = new Application($options);
 
 $server = $app->server;
 
-$user_service = $app->user;
 
-$server->setMessageHandler(function($message) use($user_service){
+
+$server->setMessageHandler(function($message) use($app){
     $open_id = $message->FromUserName;
+    $user_service = $app->user;
     $user = $user_service->get($open_id);
     switch ($message->MsgType) {
-        case 'event':
-            return '收到事件消息';
+        case 'event': {
+            switch ($message->Event) {
+                case 'unsubscribe': //取消订阅, 取消关注
+                    return '你怎么舍得离我而去?';
+                    break;
+                case 'subscribe': //订阅, 关注
+                    $nickname = $user->nickname;
+                    return "{$nickname}, 终于等到你. ";
+                    break;
+                default:
+                    return '响应事件';
+                    break;
+            }
             break;
+        }
         case 'text': //文本消息
             //$nickname = $user->nickname;
             //return json_encode($message, JSON_UNESCAPED_UNICODE);
@@ -52,6 +65,28 @@ $server->setMessageHandler(function($message) use($user_service){
                     break;
                 case '免费上网':
                     return '我们的Wifi是: zhangquanlongnan, 密码是: qianlan188';
+                    break;
+                case 'menu':
+                    $menu = $app->menu;
+                    $buttons = [
+                        [
+                            'type' => 'click',
+                            'name' => '蔡',
+                            'key' => 'MENU_10'
+                        ],
+                        [
+                            'type' => 'click',
+                            'name' => '廖',
+                            'key' => 'MENU_20'
+                        ],
+                        [
+                            'type' => 'view',
+                            'name' => '掌圈龙南',
+                            'url' => 'http://longnan.jx1860.net'
+                        ]
+                    ];
+                    $menu->add($buttons);
+                    return '菜单已更新';
                     break;
                 default:
                     return '俺不知道你想干嘛';
