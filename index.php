@@ -22,9 +22,11 @@ $server = $app->server;
 
 
 $server->setMessageHandler(function($message) use($app){
+
     $open_id = $message->FromUserName;
     $user_service = $app->user;
     $user = $user_service->get($open_id);
+
     switch ($message->MsgType) {
         case 'event': {
             switch ($message->Event) {
@@ -35,8 +37,28 @@ $server->setMessageHandler(function($message) use($app){
                     $nickname = $user->nickname;
                     return "{$nickname}, 终于等到你. ";
                     break;
+                case 'CLICK': {
+                    switch ($message->EventKey){
+                        case 'MENU_10': //第1个1级菜单
+                            return '我是蔡MM';
+                            break;
+                        case 'MENU_20': //第2个1级菜单
+                            return '我是廖GG';
+                            break;
+                        case 'MENU_32': //第3个菜单的第2个子菜单:关于我们
+                            return '我们是一群很牛B的人,欢迎来膜拜';
+                            break;
+                        case 'MENU_33': //第3个菜单的第3个子菜单:调戏客服
+                            return '你讨厌';
+                            break;
+                        default:
+                            return '别乱点';
+                            break;
+                    }
+                    break;
+                }
                 default:
-                    return '响应事件';
+                    return '响应事件: '.json_encode($message);
                     break;
             }
             break;
@@ -80,9 +102,24 @@ $server->setMessageHandler(function($message) use($app){
                             'key' => 'MENU_20'
                         ],
                         [
-                            'type' => 'view',
                             'name' => '掌圈龙南',
-                            'url' => 'http://longnan.jx1860.net'
+                            'sub_button' => [
+                                [
+                                    'type' => 'view',
+                                    'name' => '掌圈首页',
+                                    'url' => 'http://longnan.jx1860.net'
+                                ],
+                                [
+                                    'type' => 'click',
+                                    'name' => '联系我们',
+                                    'key' => 'MENU_32'
+                                ],
+                                [
+                                    'type' => 'click',
+                                    'name' => '调戏客服',
+                                    'key' => 'MENU_33'
+                                ],
+                            ]
                         ]
                     ];
                     $menu->add($buttons);
