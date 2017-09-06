@@ -1,0 +1,54 @@
+array(8) {
+  ["id"]=>
+  string(28) "or50E0x2G4Ze9Tc6kMBtZkULOzMo"
+  ["name"]=>
+  string(4) "ivix"
+  ["nickname"]=>
+  string(4) "ivix"
+  ["avatar"]=>
+  string(126) "http://wx.qlogo.cn/mmopen/vi_32/t8m4GEg1It9uav4HMicNyZCHuJmMAYibt0FzjuOZJtebicqxriaibXHh2MHjsop01Sr4NcFdBiaddqPjagB7v00ShUUg/0"
+  ["email"]=>
+  NULL
+  ["original"]=>
+  array(9) {
+    ["openid"]=>
+    string(28) "or50E0x2G4Ze9Tc6kMBtZkULOzMo"
+    ["nickname"]=>
+    string(4) "ivix"
+    ["sex"]=>
+    int(1)
+    ["language"]=>
+    string(5) "zh_CN"
+    ["city"]=>
+    string(6) "赣州"
+    ["province"]=>
+    string(6) "江西"
+    ["country"]=>
+    string(6) "中国"
+    ["headimgurl"]=>
+    string(126) "http://wx.qlogo.cn/mmopen/vi_32/t8m4GEg1It9uav4HMicNyZCHuJmMAYibt0FzjuOZJtebicqxriaibXHh2MHjsop01Sr4NcFdBiaddqPjagB7v00ShUUg/0"
+    ["privilege"]=>
+    array(0) {
+    }
+  }
+  ["token"]=>
+  object(__PHP_Incomplete_Class)#1 (2) {
+    ["__PHP_Incomplete_Class_Name"]=>
+    string(30) "Overtrue\Socialite\AccessToken"
+    ["attributes":protected]=>
+    array(5) {
+      ["access_token"]=>
+      string(86) "DLVNORtoX6U3b3Uqx3-hf1L7qyg3GeRsvPrFnkJwd2IA1ngMFw2TcgsCUp7dkxqekpCwPE-rpA6gr2X6XysA9A"
+      ["expires_in"]=>
+      int(7200)
+      ["refresh_token"]=>
+      string(86) "yOnO_VPXxWy647Q1AD0e2VZ8H1RYkS_H9bxLLb2MeehJaRE7f5zgHMx05Xp6lsmZgiwiMKLYf-GwNfabfQiVVA"
+      ["openid"]=>
+      string(28) "or50E0x2G4Ze9Tc6kMBtZkULOzMo"
+      ["scope"]=>
+      string(15) "snsapi_userinfo"
+    }
+  }
+  ["provider"]=>
+  string(6) "WeChat"
+}

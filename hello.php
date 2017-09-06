@@ -1,4 +1,6 @@
-<!doctype html>
+<?php
+session_start();
+?><!doctype html>
 <html class="no-js">
 <head>
     <meta charset="utf-8">
@@ -58,6 +60,9 @@
 <!-- /页头 -->
 
 <!-- 正文 -->
+<pre>
+    <?php var_dump($_SESSION);?>
+</pre>
 <ul data-am-widget="gallery" class="am-gallery am-avg-sm-2
   am-avg-md-3 am-avg-lg-4 am-gallery-default" data-am-gallery="{ pureview: true }" >
     <li>

@@ -92,34 +92,14 @@ $server->setMessageHandler(function($message) use($app){
                     $menu = $app->menu;
                     $buttons = [
                         [
-                            'type' => 'click',
-                            'name' => '蔡',
-                            'key' => 'MENU_10'
+                            'type' => 'view',
+                            'name' => '用户中心',
+                            'url' => 'http://nemo.jx1860.net/uc.php'
                         ],
                         [
-                            'type' => 'click',
-                            'name' => '廖',
-                            'key' => 'MENU_20'
-                        ],
-                        [
-                            'name' => '掌圈龙南',
-                            'sub_button' => [
-                                [
-                                    'type' => 'view',
-                                    'name' => '敬请欣赏',
-                                    'url' => 'http://nemo.jx1860.net/hello.php' //这里必须是完整的URL
-                                ],
-                                [
-                                    'type' => 'click',
-                                    'name' => '联系我们',
-                                    'key' => 'MENU_32'
-                                ],
-                                [
-                                    'type' => 'click',
-                                    'name' => '调戏客服',
-                                    'key' => 'MENU_33'
-                                ],
-                            ]
+                            'type' => 'view',
+                            'name' => '敬请欣赏',
+                            'url' => 'http://nemo.jx1860.net/hello.php'
                         ]
                     ];
                     $menu->add($buttons);
