@@ -97,9 +97,24 @@ $server->setMessageHandler(function($message) use($app){
                             'url' => 'http://nemo.jx1860.net/uc.php'
                         ],
                         [
-                            'type' => 'view',
-                            'name' => '敬请欣赏',
-                            'url' => 'http://nemo.jx1860.net/hello.php'
+                            'name' => '开发中心',
+                            'sub_button' => [
+                                [
+                                    'type' => 'view',
+                                    'name' => 'Hello,阿妹子',
+                                    'url' => 'http://nemo.jx1860.net/hello.php'
+                                ],
+                                [
+                                    'type' => 'view',
+                                    'name' => '分享有礼',
+                                    'url' => 'http://nemo.jx1860.net/share.php'
+                                ],
+                                [
+                                    'type' => 'view',
+                                    'name' => '上传图片',
+                                    'url' => 'http://nemo.jx1860.net/upload.php'
+                                ],
+                            ],
                         ]
                     ];
                     $menu->add($buttons);
